@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="yjy">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://yjy.us.kg/linux_stm_dev/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="how to develop stm32 on Linux, Let&#39;s configure it and enjoy it!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stm32 development environment on linux">
+<meta property="og:url" content="https://yjy.us.kg/linux_stm_dev/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="how to develop stm32 on Linux, Let&#39;s configure it and enjoy it!">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://blog.yjy.us.kg/static/images/linux_dev_env/1.png">
+<meta property="og:image" content="http://blog.yjy.us.kg/static/images/linux_dev_env/2.png">
+<meta property="og:image" content="http://blog.yjy.us.kg/static/images/linux_dev_env/3.png">
+<meta property="og:image" content="http://blog.yjy.us.kg/static/images/linux_dev_env/4.png">
+<meta property="og:image" content="http://blog.yjy.us.kg/static/images/linux_dev_env/5.png">
+<meta property="article:published_time" content="2024-08-14T04:23:12.804Z">
+<meta property="article:modified_time" content="2024-09-14T14:20:24.540Z">
+<meta property="article:author" content="yjy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.yjy.us.kg/static/images/linux_dev_env/1.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/books.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/books.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/books.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            stm32 development environment on linux -
+        
+        Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"yjy.us.kg","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"recommendation","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":"Jost","url":"https://fonts.googleapis.com/css2?family=Jost"},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"900px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/aa.webp","dark":"/images/dark.webp"},"title":"No fear, Just action.","subtitle":{"text":["Loding..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn?c=j&c=b&c=d"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":2000,"loop":false,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":"https://github.com/woquchonglang","instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"About":{"submenus":{"Github":"https://github.com/woquchonglang","Friends":"/friends"}},"Album":{"icon":"fa-solid fa-image","path":"/masonry/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"info","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/books.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/woquchonglang">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/friends">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/masonry/"
+                                        >
+                                    <i class="fa-solid fa-image fa-fw"></i>
+                                    ALBUM
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/woquchonglang">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/friends">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/masonry/"
+                        >
+                            <span>
+                                ALBUM
+                            </span>
+                            
+                                <i class="fa-solid fa-image fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://postimage.me/images/2024/09/12/a.png" alt="stm32 development environment on linux" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">stm32 development environment on linux</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">yjy</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-08-14 12:23:12</span>
+        <span class="mobile">2024-08-14 12:23:12</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-09-14 22:20:24</span>
+            <span class="mobile">2024-09-14 22:20:24</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="1-为什么不是-gcc"><a href="#1-为什么不是-gcc" class="headerlink" title="1 .为什么不是 gcc"></a>1 .为什么不是 gcc</h1><p>在开发 stm32 的时候，编译工具链要使用 gcc-arm-none-eabi，为什么不是 gcc 呢？这就要说到 linux 下的交叉编译了，因为我们要在 PC 机上编译出可以运行在 ARM 上的程序，使用 gcc 编译出的是在 PC 上运行的程序，所以我们要使用 gcc-arm-none-eabi 进行交叉编译~</p>
+<h1 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法:"></a>配置方法:</h1><h1 id="1-linux-vscode"><a href="#1-linux-vscode" class="headerlink" title="1.linux vscode"></a>1.linux vscode</h1><h3 id="1-vscode-下载插件-cmake-cmake-tools-cortex-Debug"><a href="#1-vscode-下载插件-cmake-cmake-tools-cortex-Debug" class="headerlink" title="1. vscode 下载插件 cmake, cmake-tools, cortex-Debug"></a>1. vscode 下载插件 cmake, cmake-tools, cortex-Debug</h3><p>保守起见, <code>sudo apt install cmake</code></p>
+<h3 id="2-安装-OpenOCD-用于烧录"><a href="#2-安装-OpenOCD-用于烧录" class="headerlink" title="2. 安装 OpenOCD, 用于烧录"></a>2. 安装 OpenOCD, 用于烧录</h3><p><strong>ctrl+alt+t 打开终端</strong></p>
+<p><code>sudo apt install libtool-bin</code></p>
+<p><code>sudo apt install openocd</code></p>
+<p><code>sudo apt-get install libhidapi-dev</code></p>
+<h3 id="3-安装-gcc-arm-none-eabi-编译器"><a href="#3-安装-gcc-arm-none-eabi-编译器" class="headerlink" title="3. 安装 gcc-arm-none-eabi 编译器"></a>3. 安装 gcc-arm-none-eabi 编译器</h3><p>不建议 <code>sudo apt-get gcc-arm-none-eabi</code>, 可能网比较慢</p>
+<p>建议从官网下载</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://developer.arm.com/downloads/-/gnu-rm" >https://developer.arm.com/downloads/-/gnu-rm <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf gcc-arm-none-eabi-<span class="number">10.3</span>-<span class="number">2021.10</span>-x86_64-linux.<span class="property">tar</span>.<span class="property">bz2</span></span><br></pre></td></tr></table></figure></div>
+
+
+<p>下载完成用 mv 移动到&#x2F;opt, 然后用终端输入</p>
+<p><code>sudo gedit /opt/profile</code></p>
+<p>在文件最后添加</p>
+<p><code>export PATH=$PATH:/opt/你的文件名/bin</code></p>
+<p>ctrl+s 退出 ,输入 <code>source .bashrc</code>,</p>
+<p>最后 <code>reboot</code></p>
+<h3 id="最后是工程配置"><a href="#最后是工程配置" class="headerlink" title="最后是工程配置"></a>最后是工程配置</h3><p>在 CubeMX 中生成文件要勾选生成 Makefiles 文件</p>
+<p>打开 VScode</p>
+<p>打开工程</p>
+<p>ctrl+shift+p , Edit Configurrations (JSON)</p>
+<p>根据 Makefile 中的配置<br>去掉-D, 配置到 c_cpp_properties. json</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;defines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">	<span class="string">&quot;USE_HAL_DRIVER&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="string">&quot;STM32F407xx&quot;</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div>
+
+<h4 id="烧录"><a href="#烧录" class="headerlink" title="烧录"></a>烧录</h4><p><code>openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg</code></p>
+<p><code>telnet localhost 4444</code></p>
+<p><code>program /home/lps/stm32/test01/build/test01.hex</code></p>
+<p><code>reset</code></p>
+<p><code>exit</code></p>
+<h3 id="launch-json"><a href="#launch-json" class="headerlink" title="launch.json"></a>launch.json</h3><p>要修改配置文件</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;showDevDebugOutput&quot;</span>: <span class="string">&quot;parsed&quot;</span>,</span><br><span class="line">            <span class="string">&quot;cwd&quot;</span>:<span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;executable&quot;</span>: <span class="string">&quot;./build/test.elf&quot;</span>,</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: <span class="string">&quot;DebugSTM32&quot;</span>,</span><br><span class="line">            <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cortex-debug&quot;</span>,</span><br><span class="line">            <span class="string">&quot;servertype&quot;</span>: <span class="string">&quot;openocd&quot;</span>,</span><br><span class="line">            <span class="string">&quot;device&quot;</span>:<span class="string">&quot;stm32f407&quot;</span>,</span><br><span class="line">            <span class="string">&quot;configFiles&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;interface/cmsis-dap.cfg&quot;</span>,</span><br><span class="line">                <span class="string">&quot;target/stm32f4x.cfg&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;armToolchainPath&quot;</span>: <span class="string">&quot;/opt/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux/gcc-arm-none-eabi-10.3-2021.10/bin&quot;</span>,</span><br><span class="line">            <span class="string">&quot;svdFile&quot;</span>: <span class="string">&quot;STM32F407x.svd&quot;</span>,</span><br><span class="line">            <span class="string">&quot;preLaunchTask&quot;</span>: <span class="string">&quot;Build&quot;</span>,</span><br><span class="line">            <span class="string">&quot;liveWatch&quot;</span>: &#123;</span><br><span class="line">            	<span class="string">&quot;enabled&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">				<span class="string">&quot;samplesPerSecond&quot;</span>: <span class="number">4</span></span><br><span class="line">				&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="task-json"><a href="#task-json" class="headerlink" title="task.json"></a>task.json</h3><div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">		<span class="punctuation">&#123;</span></span><br><span class="line">			<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/usr/bin/make&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;detail&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make...&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line">		<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>svd 文件能在调试的时候方便看到各个外设的状态，在之前 Windows 下 MDK 和 EWARM 安装目录里都可以找到</p>
+</blockquote>
+<p> &#96;输入make愉快编译了,然后就开始error…</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fengzifengfeng/p/9805655.html">make: No rule to make target <code>build&#39;, needed by</code>default’. Stop.</a></p>
+<h1 id="linux-clioN"><a href="#linux-clioN" class="headerlink" title="linux clioN"></a>linux clioN</h1><h2 id="cubeIDE-工程"><a href="#cubeIDE-工程" class="headerlink" title="cubeIDE 工程"></a>cubeIDE 工程</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46940469/article/details/130764190" >Clion 配置 STM32 开发环境_clion stm32 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h3 id="修改项目-CmakeLists-template-txt-模板"><a href="#修改项目-CmakeLists-template-txt-模板" class="headerlink" title="修改项目 CmakeLists_template. txt 模板"></a><strong>修改项目 CmakeLists_template. txt 模板</strong></h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#默认是include_directories($&#123;includes&#125;）</span><br><span class="line">include_directories($&#123;includes&#125; Bsp/EXTI Bsp/LED)    #直接往后添加即可</span><br><span class="line"> </span><br><span class="line">#默认是file(GLOB_RECURSE SOURCES $&#123;sources&#125;)</span><br><span class="line">file(GLOB_RECURSE SOURCES $&#123;sources&#125; &quot;Bsp/*.*&quot;)    #直接往后添加即可</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">include_directories($&#123;includes&#125;</span><br><span class="line">                    files/</span><br><span class="line">)</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file(GLOB_RECURSE SOURCES $&#123;sources&#125;</span><br><span class="line">                          &quot;files/*.*&quot;)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="gcc-环境中-printf-和-scanf-的配置，需要重新实现-C-标准库中缺少的实现"><a href="#gcc-环境中-printf-和-scanf-的配置，需要重新实现-C-标准库中缺少的实现" class="headerlink" title="gcc 环境中 printf 和 scanf 的配置，需要重新实现 C 标准库中缺少的实现"></a><strong>gcc 环境中 printf 和 scanf 的配置，需要重新实现 C 标准库中缺少的实现</strong></h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//redirect _read to huart1，necessary for scanf、getchar</span><br><span class="line">int _read(int file, char *ptr, int len)</span><br><span class="line">&#123;</span><br><span class="line">  /* receive data from serial huart1 */</span><br><span class="line">  HAL_UART_Receive(&amp;huart1, ptr, len,1000);</span><br><span class="line">  return (len);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//redirect _write to huart1，necessary for printf</span><br><span class="line">int _write(int file, char *ptr, int len)</span><br><span class="line">&#123;</span><br><span class="line">  /* send data to serial huart1 */</span><br><span class="line">  HAL_UART_Transmit(&amp;huart1, ptr, len, 1000);</span><br><span class="line">  return len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="烧录调试"><a href="#烧录调试" class="headerlink" title="烧录调试"></a>烧录调试</h3><p>在根目录新建 cmsisi-dap. cfg</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">\#source [find interface/stlink.cfg] 如果是stlink选这个</span><br><span class="line">adapter driver cmsis-dap</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用 swd 调试接口</span></span><br><span class="line">transport select swd</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">increase working area to 64KB</span></span><br><span class="line">set FLASH_SIZE 0x10000</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">目标芯片设定为 STM32F4 系列</span></span><br><span class="line">source [find target/stm32f4x.cfg]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">指示系统重启，如果烧录失败，尝试注释掉</span></span><br><span class="line">reset_config srst_only</span><br></pre></td></tr></table></figure></div>
+
+
+<h3 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h3><p>记得在 cmakelist_temoleate. txt 修改，不要在 cmakelist. txt 修改，cubemx 会覆盖</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># project settings</span><br><span class="line">set(CMAKE_C_FLAGS -w)</span><br></pre></td></tr></table></figure></div>
+
+<p>while (1) 死循环警告</p>
+<p>取消勾选 endess loop statements</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://blog.yjy.us.kg/static/images/linux_dev_env/1.png"
+                     
+                >
+
+
+<p>局部变量没有 const 警告</p>
+<p>取消勾选 Local variable can be made const</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://blog.yjy.us.kg/static/images/linux_dev_env/2.png"
+                     
+                >
+
+<h3 id="redefined-啥的"><a href="#redefined-啥的" class="headerlink" title="redefined 啥的"></a>redefined 啥的</h3><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/HITORANGE/article/details/135637550?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-135637550-blog-118752259.235%5Ev43%5Epc_blog_bottom_relevance_base8&spm=1001.2101.3001.4242.1&utm_relevant_index=3" >GCC 编译选项 屏蔽某些警告 CMAKE_CXX_FLAGS <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>  </p>
+<blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html" >Warning Options (Using the GNU Compiler Collection (GCC)) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/XuYuFan/p/18094079" >non constant or forward reference address expression for section .ARM.extab <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/XuYuFan/p/18094079" >non constant or forward reference address expression for section .ARM. extab 错误解决 - 老司机快发车 - 博客园 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>  </p>
+<p>the file was loaded in a wrong encoding</p>
+<h1 id="cmake-ninja-openod"><a href="#cmake-ninja-openod" class="headerlink" title="cmake + ninja + openod"></a>cmake + ninja + openod</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>无需 ide，直接在终端编译，建议搭配 nvim 使用，也可以在 clion 、vscode 中使用, 使用 cmake 而不是 makefile 可以更加高效</p>
+<h2 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h2><p>在 Toolchain IDE 中选择 cmake</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://blog.yjy.us.kg/static/images/linux_dev_env/3.png"
+                     
+                >
+
+<h2 id="need"><a href="#need" class="headerlink" title="need"></a>need</h2><p>cmake<br>ninga<br>arm-none-eabi-gcc</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://blog.yjy.us.kg/static/images/linux_dev_env/4.png"
+                     
+                >
+<h3 id="Arch"><a href="#Arch" class="headerlink" title="Arch"></a>Arch</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S --needed arm-none-eabi-newlib</span><br></pre></td></tr></table></figure></div>
+
+
+<h2 id="修改-cmakelist"><a href="#修改-cmakelist" class="headerlink" title="修改 cmakelist"></a>修改 cmakelist</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">add_compile_options(-w)  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"># Create an executable object type  </span><br><span class="line">add_executable($&#123;CMAKE_PROJECT_NAME&#125; $&#123;SOURCES&#125;  </span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"># Add include paths  </span><br><span class="line">target_include_directories($&#123;CMAKE_PROJECT_NAME&#125; PRIVATE  </span><br><span class="line">    files/</span><br><span class="line"># Add user defined include paths  </span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="生成-build-ninja"><a href="#生成-build-ninja" class="headerlink" title="生成 build. ninja"></a>生成 build. ninja</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -B cmake-build-debug -G &quot;Ninja&quot;</span><br></pre></td></tr></table></figure></div>
+<h2 id="编译生成-elf"><a href="#编译生成-elf" class="headerlink" title="编译生成 .elf"></a>编译生成 .elf</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ninja -C build</span><br></pre></td></tr></table></figure></div>
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://blog.yjy.us.kg/static/images/linux_dev_env/5.png"
+                     
+                >
+
+<h2 id="烧录-1"><a href="#烧录-1" class="headerlink" title="烧录"></a>烧录</h2><p>[[openocd]]</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg  -c &#x27;program ./cmake-build-debug/board_c.elf verify reset exit&#x27;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg  -c &#x27;program ./cmake-build-debug/board_c.elf verify reset&#x27; -c &#x27;init; reset init;&#x27;</span><br></pre></td></tr></table></figure></div>
+<p>此后，启用调试有三种方法：</p>
+<ul>
+<li>使用 telnet 连接 openocd, Telnet：默认运行在 4444 端口，Telnet 服务；</li>
+<li>连接 tcl 服务器执行 tcl 脚本, TCL：默认运行在 6666 端口，TCL 脚本服务；</li>
+<li>使用 gdb，连接远程目标到 openocd 的 gdbserver, GDB：默认运行在 3333 端口，GDB 调试服务；</li>
+</ul>
+<hr>
+<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/wcc243588569/article/details/140269560" >STM32开发：1、使用VSCode + CMake + Ninja + CubeMX编译代码_cubemx cmake-CSDN博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> stm32 development environment on linux</li>
+        <li><strong>Author:</strong> yjy</li>
+        <li><strong>Created at
+                :</strong> 2024-08-14 12:23:12</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-09-14 22:20:24
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://yjy.us.kg/linux_stm_dev/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/xml/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">XML</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'Ov23li5vAPKCYTDd5wDq',
+                    clientSecret: '99d424cfe1ff2d7777f75590eaf67cc21a03907a',
+                    repo: 'gitalk',
+                    owner: 'woquchonglang',
+                    admin: ['woquchonglang'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://strong-caramel-969805.netlify.app/github_access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">stm32 development environment on linux</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E6%98%AF-gcc"><span class="nav-text">1 .为什么不是 gcc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-text">配置方法:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-linux-vscode"><span class="nav-text">1.linux vscode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-vscode-%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6-cmake-cmake-tools-cortex-Debug"><span class="nav-text">1. vscode 下载插件 cmake, cmake-tools, cortex-Debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85-OpenOCD-%E7%94%A8%E4%BA%8E%E7%83%A7%E5%BD%95"><span class="nav-text">2. 安装 OpenOCD, 用于烧录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85-gcc-arm-none-eabi-%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-text">3. 安装 gcc-arm-none-eabi 编译器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%98%AF%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE"><span class="nav-text">最后是工程配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#launch-json"><span class="nav-text">launch.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#task-json"><span class="nav-text">task.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-clioN"><span class="nav-text">linux clioN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cubeIDE-%E5%B7%A5%E7%A8%8B"><span class="nav-text">cubeIDE 工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE-CmakeLists-template-txt-%E6%A8%A1%E6%9D%BF"><span class="nav-text">修改项目 CmakeLists_template. txt 模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc-%E7%8E%AF%E5%A2%83%E4%B8%AD-printf-%E5%92%8C-scanf-%E7%9A%84%E9%85%8D%E7%BD%AE%EF%BC%8C%E9%9C%80%E8%A6%81%E9%87%8D%E6%96%B0%E5%AE%9E%E7%8E%B0-C-%E6%A0%87%E5%87%86%E5%BA%93%E4%B8%AD%E7%BC%BA%E5%B0%91%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">gcc 环境中 printf 和 scanf 的配置，需要重新实现 C 标准库中缺少的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%A7%E5%BD%95%E8%B0%83%E8%AF%95"><span class="nav-text">烧录调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AD%A6%E5%91%8A"><span class="nav-text">警告</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redefined-%E5%95%A5%E7%9A%84"><span class="nav-text">redefined 啥的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E9%94%99"><span class="nav-text">报错</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cmake-ninja-openod"><span class="nav-text">cmake + ninja + openod</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90"><span class="nav-text">生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#need"><span class="nav-text">need</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Arch"><span class="nav-text">Arch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-cmakelist"><span class="nav-text">修改 cmakelist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-build-ninja"><span class="nav-text">生成 build. ninja</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90-elf"><span class="nav-text">编译生成 .elf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%A7%E5%BD%95-1"><span class="nav-text">烧录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95"><span class="nav-text">调试</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">yjy</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        3 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/libs/minimasonry.min.js"></script>
+
+    
+<script src="/js/plugins/masonry.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
