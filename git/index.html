@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="yjy">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+        
+        
+        
+            <link rel="preconnect" href="https://registry.npmmirror.com" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://yjy.us.kg/git/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="这是个人对git的学习理解以及在工作中常用的git指令,希望能给你带来帮助󱜙">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 以及 git 常用指令">
+<meta property="og:url" content="https://yjy.us.kg/git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这是个人对git的学习理解以及在工作中常用的git指令,希望能给你带来帮助󱜙">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-01-17T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-17T08:45:23.980Z">
+<meta property="article:author" content="yjy">
+<meta property="article:tag" content="CS">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/books.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/books.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/books.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            git 以及 git 常用指令 | Blog
+        
+    </title>
+
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fonts/Chillax/chillax.css">
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/css/tailwind.css">
+    
+
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fonts/GeistMono/geist-mono.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fonts/Geist/geist.css">
+    <!--- Font Part-->
+    
+        <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Sofadi+One&display=swap" rel="stylesheet">
+    
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+        <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/anime.min.js" ></script>
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"yjy.us.kg","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"recommendation","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":"Jost","url":"https://fonts.googleapis.com/css2?family=Jost"},"english":{"enable":true,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"900px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"welcome to my blog"},"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/ee.webp","dark":"/images/dark.webp"},"title":"Welcome!","subtitle":{"text":["Loding..."],"hitokoto":{"enable":true,"show_author":true,"api":"https://v1.hitokoto.cn?c=j&c=b&c=d"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":2000,"loop":false,"smart_backspace":true},"text_color":{"light":"#ffffff","dark":"#d1d1b6"},"text_style":{"title_size":"3.0rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":"enable","family":"Playpen Sans","url":"https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Sofadi+One&display=swap"},"social_links":{"enable":true,"style":"center","links":{"github":"https://github.com/woquchonglang","bilibili":"https://space.bilibili.com/376082645?spm_id_from=333.1007.0.0","fa-regular fa-music":"https://music.163.com/#/user?id=567349113","qq":"http://wpa.qq.com/msgrd?v=3&uin=1564313552&site=qq&menu=yes"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Album":{"icon":"fa-solid fa-image","path":"/masonry/"},"tags":{"icon":"fa-solid fa-tags","path":"/tags/"},"About":{"submenus":{"Github":"https://github.com/woquchonglang","Friends":"https://yjy.us.kg/links/","aboutme":"https://yjy.us.kg/about/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"info","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3},"limit":10},"footerStart":"2023/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/fontawesome/regular.min.css">
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        welcome to my blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="/images/books.svg" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/masonry/"
+                                        >
+                                    <i class="fa-solid fa-image fa-fw"></i>
+                                    ALBUM
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/"
+                                        >
+                                    <i class="fa-solid fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/woquchonglang">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="https://yjy.us.kg/links/">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="https://yjy.us.kg/about/">
+                                                    ABOUTME
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/masonry/"
+                        >
+                            <span>
+                                ALBUM
+                            </span>
+                            
+                                <i class="fa-solid fa-image fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-solid fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/woquchonglang">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://yjy.us.kg/links/">FRIENDS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://yjy.us.kg/about/">ABOUTME</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="http://blog.yjy.us.kg/title/cat.jpg" alt="git 以及 git 常用指令" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">git 以及 git 常用指令</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">yjy</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-01-17 18:00</span>
+        <span class="mobile">2025-01-17 18:00</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-17 16:45:23</span>
+            <span class="mobile">2025-01-17 16:45:23</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/CS/">CS</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h1><p><a class="link" target="_blank" rel="noopener" href="https://github.com/geeeeeeeeek/git-recipes">GitHub - geeeeeeeeek&#x2F;git-recipes: 🥡 Git recipes in Chinese by Zhongyi Tong. 高质量的Git中文教程.<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></p>
+<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><code>Git</code> 最初是由 Linux 开发者 Linus 用了仅仅两周时间纯 C 语言编写而成，在编写完成之后就立马上手接管 Linux 源代码，不过在此之前 Linux 是由 <code>BitMover</code> 公司开发的 <code>BitKeeper</code> 分布式版本控制系统所管理源代码，它是商业收费的分布式版本控制器，但 BitMover 公司看中 Linux 开源精神，免费授权给 Linux 社区使用，在 2002 年时，Linux 开始使用 BitKeeper 分布式版本控制系统管理源代码，但好景不长，有一天 Linux 社区成员 Andrew（samba（局域网共享文件 c&#x2F;s 程序）的作者）试图破解 BitKeeper 共享给所有人使用，被 BitMover 公司发现并收回了免费使用的版权，随后 Linus 就用了两周时间开发出了 git (两周时间包括测试)，也就是目前为止最好用的分布式版本控制系统。</p>
+<p>大名鼎鼎的 github 用的就是 git 系统来管理它们的网站，这里需要区分一下，github 和 git 是两个东西，github 是一个社区，git 是一个服务系统，github 只支持 git 分布式系统，所以故名成为 github</p>
+<h1 id="differences"><a href="#differences" class="headerlink" title="differences"></a>differences</h1><h2 id="集中式与分布式"><a href="#集中式与分布式" class="headerlink" title="集中式与分布式"></a>集中式与分布式</h2><p>除了 git 还有 svn、cvs 这样的版本控制系统，它们的区别在于一个是分布式一个是集中式<br>集中式就是 svn 和 csv 这样的版本控制系统，分布式是 git</p>
+<p>区别在于集中式的版本控制系统每次在写代码时都需要从服务器中拉取一份下来，并且如果服务器丢失了，那么所有的就都丢失了，你本机客户端仅保存当前的版本信息，换句话说，集中式就是把代码放在一个服务器上集中管理，你的所有回滚等操作都需要服务器的支持。</p>
+<p>分布式的区别在于，每个人的电脑都是服务器，当你从主仓库拉取一份代码下来后，你的电脑就是服务器，无需担心主仓库被删或者找不到的情况，你可以自由在本地回滚，提交，当你想把自己的代码提交到主仓库时，只需要合并推送到主仓库就可以了，同时你可以把自己的代码新建一份仓库分享给其它人。</p>
+<p>像集中式它们都有一个主版本号，所有的版本迭代都以这个版本号为主，而分布式因为每个客户端都是服务器，git 没有固定的版本号，但是有一个由哈希算法算出的 id，用来回滚用的，同时也有一个 master 仓库，这个仓库是一切分支仓库的主仓库，我们可以推送提交到 master 并合并到主仓库上，主仓库的版本号会迭代一次，我们客户端上的 git 版本号无论迭代多少次，都跟 master 无关，只有合并时，master 才会迭代一次</p>
+<h1 id="commands"><a href="#commands" class="headerlink" title="commands"></a>commands</h1><h2 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config -l    #查看个人信息</span><br><span class="line">git config --global user.name  xxx</span><br><span class="line">git config --global user.email xxx</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><p>init：初始化当前目录为仓库，初始化后会自动将当前仓库设置为master, 并生成 git 配置文件. git</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h2><p>常看当前git状态</p>
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><h3 id="error"><a href="#error" class="headerlink" title="error"></a>error</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">Your branch and &#x27;origin/master&#x27; have diverged,</span><br><span class="line">and have 4 and 10 different commits each, respectively.</span><br><span class="line">  (use &quot;git pull&quot; to merge the remote branch into yours)</span><br><span class="line">nothing to commit, working tree clean</span><br></pre></td></tr></table></figure></div>
+<p>fetch</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure></div>
+<p>pull</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rebase origin/master</span><br><span class="line">git pull --rebase</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h3><p>切换分支</p>
+<p>新建分支并切换到分支</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="rename"><a href="#rename" class="headerlink" title="rename"></a>rename</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -m old_name new_name</span><br><span class="line">git push -u origin new_name</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="github-默认仓库"><a href="#github-默认仓库" class="headerlink" title="github 默认仓库"></a>github 默认仓库</h3><h2 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h2><h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><p>git commit 会为我们生成 40 位的哈希值，用于作为 id，并把刚刚用 git add 添加到提交缓存区里的文件提交到本地仓库中，便于我们回滚，至此，这个文件就已经添加到本地仓库中了，同时本地仓库也迭代了一个版本</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;note&quot;</span><br></pre></td></tr></table></figure></div>
+<h3 id="commit-message-规范"><a href="#commit-message-规范" class="headerlink" title="commit message 规范"></a>commit message 规范</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;// 空一行&lt;body&gt;// 空一行&lt;footer&gt;// 示例docs(guide): updated fixed docs from Google DocsCouple of typos fixed:- indentation- batchLogbatchLog -&gt; batchLog- start periodic checking- missing brace</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>type： 说明 commit 类型<ol>
+<li>feat: 新功能</li>
+<li>fix: bug 修复</li>
+<li>docs: 文档(documentation)</li>
+<li>style: 代码格式化，添加分号等(不影响代码运行的变动)</li>
+<li>refactor: 重构(不是新增功能也不是修改bug)</li>
+<li>test: 增加或修改测试用例</li>
+<li>chore: 构建过程或者辅助工具的变动</li>
+<li>perf: 改善性能的修改</li>
+</ol>
+</li>
+<li>scope：可选，用于说明 commit 影响的范围</li>
+<li>subject：commit 目的的<strong>简单</strong>描述</li>
+<li>body：可选，详细的 commit 描述</li>
+<li>footer：可选，关闭的 issues 或者<strong>不兼容的变更</strong></li>
+</ul>
+<h3 id="git-commit-–amend"><a href="#git-commit-–amend" class="headerlink" title="git commit –amend"></a>git commit –amend</h3><p>用于改写提交</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &quot;xxx&quot;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="git-commit-–amend-–no-edit"><a href="#git-commit-–amend-–no-edit" class="headerlink" title="git commit –amend –no-edit"></a>git commit –amend –no-edit</h3><p>用于添加修改但不更改 commit 信息</p>
+<h3 id="git-reset-commit-id"><a href="#git-reset-commit-id" class="headerlink" title="git reset commit-id"></a>git reset commit-id</h3><p>撤销 commit, 并且将修改放回修改区</p>
+<h3 id="书写多行-commit-message"><a href="#书写多行-commit-message" class="headerlink" title="书写多行 commit message"></a>书写多行 commit message</h3><p>当 Commit message 存在多行时，可以执行: <strong><code>git commit</code></strong>, 此时会进入 vim 编辑器，允许输入多行文字</p>
+<h4 id="修改默认-commit-编辑器"><a href="#修改默认-commit-编辑器" class="headerlink" title="修改默认 commit 编辑器"></a>修改默认 commit 编辑器</h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --system core.editor &quot;neovim&quot;    </span><br></pre></td></tr></table></figure></div>
+
+<hr>
+<p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/530365579">保持清洁的Git提交记录，三招就够了<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></p>
+<h2 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></div>
+<h2 id="git-remote"><a href="#git-remote" class="headerlink" title="git remote"></a>git remote</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:michaelliao/learngit.git</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h3><h4 id="error-remote-origin-already-exists"><a href="#error-remote-origin-already-exists" class="headerlink" title="error: remote origin already exists."></a><code>error: remote origin already exists.</code></h4><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="git-fetch-pull"><a href="#git-fetch-pull" class="headerlink" title="git fetch &#x2F; pull"></a>git fetch &#x2F; pull</h2><p><code>git fetch</code>是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。<br>而 <code>git pull</code> 则是将远程主机的最新内容拉下来后直接合并，即：<code>git pull = git fetch + git merge</code>，这样可能会产生冲突，需要手动解决</p>
+<h3 id="bug-1"><a href="#bug-1" class="headerlink" title="bug"></a>bug</h3><p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43916997/article/details/123645376">git问题error: remote origin already exists._git error: remote origin already exists.-CSDN博客<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></p>
+<h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><blockquote>
+<p>[!tip] master branch merge, feature branch rebase</p>
+</blockquote>
+<h2 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h2><hr>
+<p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/397267546">还在恐惧 Git 冲突? 一篇文章拯救你<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></p>
+<h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><h3 id="打印单行输出"><a href="#打印单行输出" class="headerlink" title="打印单行输出"></a>打印单行输出</h3><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline --abbrev-commit   </span><br></pre></td></tr></table></figure></div>
+
+
+<h1 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h1><p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git tag &lt;name&gt;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>[!note] 默认标签是打在最新提交的commit上的。有时候，如果忘了打标签，比如，现在已经是周五了，但应该在周一打的标签没有打，怎么办？<br>方法是找到历史提交的commit id，然后打上就可以了</p>
+</blockquote>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r</span><br><span class="line">git tag  &lt;name&gt; &lt;common id&gt;</span><br></pre></td></tr></table></figure></div>
+<p>标签不是按时间顺序列出，而是按字母排序的。可以用<code>git show &lt;tagname&gt;</code>查看标签信息</p>
+<p>还可以创建带有说明的标签，用 <code>-a</code> 指定标签名，<code>-m</code> 指定说明文字</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v1.0.0 -m &quot;Release version 1.0.0&quot;</span><br></pre></td></tr></table></figure></div>
+
+<p><code>git tag -d &lt;tag name&gt;</code>: 删除标签<br><code>git push origin &lt;tag name&gt;</code>: 推送标签</p>
+<blockquote>
+<p>[!warning] 标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签</p>
+</blockquote>
+<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>恢复修改，并删除 stash 缓存</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure></div>
+<p>恢复修改，但不删除 stash 缓存</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="git-show"><a href="#git-show" class="headerlink" title="git show"></a>git show</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show &lt;tagname&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="gitignone"><a href="#gitignone" class="headerlink" title=".gitignone"></a>.gitignone</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#</span><br></pre></td></tr></table></figure></div>
+<h2 id="忽略目录"><a href="#忽略目录" class="headerlink" title="忽略目录"></a>忽略目录</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">folder/</span><br></pre></td></tr></table></figure></div>
+<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*.obsidian/plugins/float-search/data.json</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>[!warning] 一定要先删除远程仓库的内容才会生效</p>
+</blockquote>
+<h1 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h1><h2 id="gitmoji"><a href="#gitmoji" class="headerlink" title="gitmoji"></a>gitmoji</h2><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm i -g gitmoji-cli      </span><br></pre></td></tr></table></figure></div>
+
+<p>gitmoji -i 用来创建 hook, 以后用的 git commit 都会被跳转到 gitmoji，如果不想每次都 gitmoji 的话，可以不用 gitmoji -i, 而是在 commit 的时候单独使用 gitmoji -c, 并且添加后 emoji 后首字母会自动大写。</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">gitmoji -i</span><br></pre></td></tr></table></figure></div>
+
+<p><a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/question/34540623">如何优雅地使用 Git？<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i><br><a class="link" target="_blank" rel="noopener" href="https://gitmoji.carloscuesta.me/">gitmoji | An emoji guide for your commit messages<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></a></p>
+<h2 id="Commitizen"><a href="#Commitizen" class="headerlink" title="Commitizen"></a>Commitizen</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> npm install -g commitizen</span><br></pre></td></tr></table></figure></div>
+<p>然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式。</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">commitizen init cz-conventional-changelog --save --save-exact</span><br></pre></td></tr></table></figure></div>
+
+
+<h2 id="conventional-changelog"><a href="#conventional-changelog" class="headerlink" title="conventional-changelog"></a>conventional-changelog</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g conventional-changelog</span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line">conventional-changelog -p angular -i CHANGELOG.md -w</span><br></pre></td></tr></table></figure></div>
+
+<p>如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成（<a class="link" target="_blank" rel="noopener" href="https://github.com/ajoslin/conventional-changelog/blob/master/CHANGELOG.md">例1<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i>，<a class="link" target="_blank" rel="noopener" href="https://github.com/karma-runner/karma/blob/master/CHANGELOG.md">例2<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i>，<a class="link" target="_blank" rel="noopener" href="https://github.com/btford/grunt-conventional-changelog/blob/master/CHANGELOG.md">例3<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i>）。<br>生成的文档包括以下三个部分。</a></a></a></p>
+<blockquote>
+<ul>
+<li>New features</li>
+<li>Bug fixes</li>
+<li>Breaking changes.</li>
+</ul>
+</blockquote>
+<p>每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。<br>上面命令不会覆盖以前的 Change log，只会在<code>CHANGELOG.md</code>的头部加上自从上次发布以来的变动。</p>
+<p>如果你想生成所有发布的 Change log，要改为运行下面的命令。</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conventional-changelog -p angular -i CHANGELOG.md -w -r 0 </span><br></pre></td></tr></table></figure></div>
+
+<p>为了方便使用，可以将其写入<code>package.json</code>的<code>scripts</code>字段。</p>
+<div class="highlight-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;changelog&quot;</span>: <span class="string">&quot;conventional-changelog -p angular -i CHANGELOG.md -w -r 0&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>以后，直接运行下面的命令即可。</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run changelog</span><br></pre></td></tr></table></figure></div>
+<hr>
+<p><a class="link" target="_blank" rel="noopener" href="https://github.com/ajoslin/conventional-changelog">conventional-changelog<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></p>
+<h1 id="github"><a href="#github" class="headerlink" title="[[github]]"></a>[[github]]</h1><h1 id="git-flow"><a href="#git-flow" class="headerlink" title="[[git flow]]"></a>[[git flow]]</h1><h1 id="gitea"><a href="#gitea" class="headerlink" title="gitea"></a>gitea</h1><h1 id="bug-2"><a href="#bug-2" class="headerlink" title="bug"></a>bug</h1><h2 id="报错-gnutls-handshake-failed-The-TLS-connection-was-non-properly-terminated"><a href="#报错-gnutls-handshake-failed-The-TLS-connection-was-non-properly-terminated" class="headerlink" title="报错 gnutls_handshake() failed: The TLS connection was non-properly terminated."></a>报错 <code>gnutls_handshake() failed: The TLS connection was non-properly terminated.</code></h2><p>因为代理设错了，我的 clash 设置的 https 和 http 的地址是一样的，但是我 <code>export https://xxx</code>, 导致连接不上，将其改为 <code>export http://</code> 即可</p>
+<hr>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45491549/article/details/128825216">如何使用git从github拉取自己的私有仓库(Token方式、本地秘钥方式)_git自己的私人仓库怎么拉取-CSDN博客<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i><br><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/bjbz_cxy/article/details/116703787?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172267740716800186519065%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=172267740716800186519065&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-116703787-null-null.142%5Ev100%5Epc_search_result_base7&utm_term=git&spm=1018.2226.3001.4187">关于Git这一篇就够了_git push origin –delete-CSDN博客<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://liaoxuefeng.com/books/git/time-travel/add/index.html">管理修改 - Git教程 - 廖雪峰的官方网站<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i><br><a class="link" target="_blank" rel="noopener" href="https://www.cnblogs.com/runnerjack/p/9342362.html">git fetch &amp; pull详解 - Runner_Jack - 博客园<i class="fa-sharp fa-regular fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em]"></i></a></a></p>
+<blockquote>
+<p>[!info] vscode 上传项目到 github_vscode 上传代码到 github-CSDN 博客<br>文章浏览阅读 1.<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_51185558/article/details/126181439?ops_request_misc=%7B%22request_id%22:%22170961116516800226558506%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=170961116516800226558506&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-126181439-null-null.142%5Ev99%5Epc_search_result_base9&utm_term=vscode%E4%B8%8Egithub&spm=1018.2226.3001.4187">https://blog.csdn.net/m0_51185558&#x2F;article&#x2F;details&#x2F;126181439?ops_request_misc&#x3D;%7B%22request%5Fid%22%3A%22170961116516800226558506%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id&#x3D;170961116516800226558506&amp;biz_id&#x3D;0&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>top_positive~default-1-126181439-null-null.142^v99^pc_search_result_base9&amp;utm_term&#x3D;vscode与github&amp;spm&#x3D;1018.2226.3001.4187</a>  </p>
+</blockquote>
+<blockquote>
+<p>[!info] 场景二：Git 远程版本库的基本用法_git 库克隆后怎么看版本-CSDN 博客<br>文章浏览阅读 579 次。通过克隆远程版本库从而在本地创建了一个版本库，这时就可以参照场景一的本地版本库基本用法，执行查看工作区的状态、暂存更改的文件、把暂存区提交到仓库，以及回到过去、回到未来等本地版本控制的基本操作。这时本地仓库的提交项是领先于远程仓库的，只需要通过 git push 将本地仓库中的提交项推送到远程仓库，即可完成本地仓库和远程仓库的同步。执行 git remote -v 命令可以查看更详细的远程存储库信息，包括抓取（fetch）的远程存储库 URL 和推送（push）的远程存储库的 URL。_git 库克隆后怎么看版本<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43844521/article/details/129472996?ops_request_misc=%7B%22request_id%22:%22170961312916800227451526%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=170961312916800227451526&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-129472996-null-null.142%5Ev99%5Epc_search_result_base9&utm_term=%E8%BF%9C%E7%A8%8B%E5%AD%98%E5%82%A8%E5%BA%93%E5%90%8D%E7%A7%B0&spm=1018.2226.3001.4187">https://blog.csdn.net/weixin_43844521&#x2F;article&#x2F;details&#x2F;129472996?ops_request_misc&#x3D;%7B%22request%5Fid%22%3A%22170961312916800227451526%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id&#x3D;170961312916800227451526&amp;biz_id&#x3D;0&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduend~default-1-129472996-null-null.142^v99^pc_search_result_base9&amp;utm_term&#x3D;远程存储库名称&amp;spm&#x3D;1018.2226.3001.4187</a>  </p>
+</blockquote>
+<blockquote>
+<p>[!info] git 上传步骤_git 怎么上传-CSDN 博客<br>文章浏览阅读 1.<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45083936/article/details/117327824?ops_request_misc=%7B%22request_id%22:%22171066713816800185860713%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=171066713816800185860713&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-117327824-null-null.142%5Ev99%5Epc_search_result_base6&utm_term=%E4%B8%8A%E4%BC%A0git&spm=1018.2226.3001.4187">https://blog.csdn.net/qq_45083936&#x2F;article&#x2F;details&#x2F;117327824?ops_request_misc&#x3D;%7B%22request%5Fid%22%3A%22171066713816800185860713%22%2C%22scm%22%3A%2220140713.130102334..%22%7D&amp;request_id&#x3D;171066713816800185860713&amp;biz_id&#x3D;0&amp;utm_medium&#x3D;distribute.pc_search_result.none-task-blog-2<del>all</del>sobaiduend~default-1-117327824-null-null.142^v99^pc_search_result_base6&amp;utm_term&#x3D;上传git&amp;spm&#x3D;1018.2226.3001.4187</a>  </p>
+</blockquote>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> git 以及 git 常用指令</li>
+        <li><strong>Author:</strong> yjy</li>
+        <li><strong>Created at
+                :</strong> 2025-01-17 18:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-01-17 16:45:23
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://yjy.us.kg/git/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/CS/">#CS</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/ch340g/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">从零制作一个烧录器</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'Ov23li5vAPKCYTDd5wDq',
+                    clientSecret: '99d424cfe1ff2d7777f75590eaf67cc21a03907a',
+                    repo: 'gitalk',
+                    owner: 'woquchonglang',
+                    admin: ['woquchonglang'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://strong-caramel-969805.netlify.app/github_access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">git 以及 git 常用指令</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90"><span class="nav-text">学习资源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#history"><span class="nav-text">history</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#differences"><span class="nav-text">differences</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8F%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F"><span class="nav-text">集中式与分布式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commands"><span class="nav-text">commands</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config"><span class="nav-text">git config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-status"><span class="nav-text">git status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch"><span class="nav-text">git branch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#error"><span class="nav-text">error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-checkout"><span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rename"><span class="nav-text">rename</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github-%E9%BB%98%E8%AE%A4%E4%BB%93%E5%BA%93"><span class="nav-text">github 默认仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff"><span class="nav-text">git diff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-text">git commit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#commit-message-%E8%A7%84%E8%8C%83"><span class="nav-text">commit message 规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-%E2%80%93amend"><span class="nav-text">git commit –amend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-%E2%80%93amend-%E2%80%93no-edit"><span class="nav-text">git commit –amend –no-edit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-reset-commit-id"><span class="nav-text">git reset commit-id</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A6%E5%86%99%E5%A4%9A%E8%A1%8C-commit-message"><span class="nav-text">书写多行 commit message</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-push"><span class="nav-text">git push</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-remote"><span class="nav-text">git remote</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bug"><span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-fetch-pull"><span class="nav-text">git fetch &#x2F; pull</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bug-1"><span class="nav-text">bug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-text">git rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-merge"><span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-text">git log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E5%8D%95%E8%A1%8C%E8%BE%93%E5%87%BA"><span class="nav-text">打印单行输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tag"><span class="nav-text">tag</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-stash"><span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-show"><span class="nav-text">git show</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitignone"><span class="nav-text">.gitignone</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E7%9B%AE%E5%BD%95"><span class="nav-text">忽略目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="nav-text">忽略文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#plugins"><span class="nav-text">plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gitmoji"><span class="nav-text">gitmoji</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commitizen"><span class="nav-text">Commitizen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conventional-changelog"><span class="nav-text">conventional-changelog</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-text">[[github]]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-flow"><span class="nav-text">[[git flow]]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gitea"><span class="nav-text">gitea</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug-2"><span class="nav-text">bug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%A5%E9%94%99-gnutls-handshake-failed-The-TLS-connection-was-non-properly-terminated"><span class="nav-text">报错 gnutls_handshake() failed: The TLS connection was non-properly terminated.</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">yjy</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        5 posts in total
+                    </span>
+                    
+                        <span>
+                            10.5k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+<script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/Swup.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/SwupSlideTheme.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/SwupScriptsPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/SwupProgressPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/SwupScrollPlugin.min.js" ></script><script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/SwupPreloadPlugin.min.js" ></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	<script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/imageViewer.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/utils.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/main.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/layouts/navbarShrink.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/scrollTopBottom.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/lightDarkSwitch.js" ></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/layouts/categoryList.js" ></script>
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/localSearch.js" ></script>
+
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/codeBlock.js" ></script>
+
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/layouts/lazyload.js" ></script>
+
+
+
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/runtime.js" ></script>
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/odometer.min.js" ></script>
+    <link rel="stylesheet" href="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/assets/odometer-theme-minimal.css">
+
+
+
+  <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/Typed.min.js" ></script>
+  <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/plugins/typed.js" ></script>
+
+
+
+
+
+    <script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/minimasonry.min.js" ></script>
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/plugins/masonry.js" ></script>
+
+
+
+
+
+
+    <script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/tools/tocToggle.js" data-swup-reload-script></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/layouts/toc.js" data-swup-reload-script></script><script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/plugins/tabs.js" data-swup-reload-script></script>
+
+
+<script  src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/libs/moment-with-locales.min.js" data-swup-reload-script></script>
+<script type="module" src="https://registry.npmmirror.com/hexo-theme-redefine/2.8.0/files/source/build/js/layouts/essays.js" data-swup-reload-script></script>
+
+
+
+
+	
+</body>
+
+</html>
